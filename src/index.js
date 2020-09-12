@@ -1,12 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import Profile from './profile/Profile';
+import image from './wafa.png'
 import * as serviceWorker from './serviceWorker';
 
+const myProfile={fullName:"Wafa Mansouri", bio:"",
+profession:"Civil Engineer"}
+
+const handleName=(profile)=>{alert(`Your name is ${profile.fullName}`)};
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Profile profile={myProfile} handleName={handleName}>
+      <img src={image} alt="profile photo" style={{width:300}}></img></Profile>
   </React.StrictMode>,
   document.getElementById('root')
 );
